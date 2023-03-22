@@ -1,5 +1,7 @@
 # Projeto Blog Interface
 
+![Codecov](https://img.shields.io/codecov/c/github/edmilsondmx/projeto_blog_interface)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
