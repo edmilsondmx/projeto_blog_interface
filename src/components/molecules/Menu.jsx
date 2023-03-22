@@ -43,13 +43,13 @@ const ContainerNav = styled.div`
     }
   }
 
-  nav a {
+  a {
     font-size: 2rem;
-    color: #c8c8c8;
+    color: ${(props) => props.theme.colors.textOther};
     text-decoration: none;
   }
 
-  nav ul li a:hover {
+  a:hover {
     color: ${(props) => props.theme.colors.text};
   }
 `;
