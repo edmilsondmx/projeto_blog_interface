@@ -1,12 +1,13 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+import { Helmet } from "react-helmet";
 
 const GlobalStyle = createGlobalStyle`
   html {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 100%;
-    color: #212121;
+    color: ${(props) => props.theme.colors.text};;
     box-sizing: border-box;
   }
 
@@ -25,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h5, h6 {
     line-height: 1.3;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 2px;
   }
 
@@ -60,6 +61,12 @@ const GlobalStyle = createGlobalStyle`
 const GlobalStyleComposed = () => (
   <>
     <GlobalStyle />
+    <Helmet>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </Helmet>
   </>
 );
 
