@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: ["master"]
+    branches: ["master", "develop"]
   pull_request:
-    branches: ["master"]
+    branches: ["master", "develop"]
 
 jobs:
   linting:
@@ -51,4 +51,5 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:
-          file: coverage/*.json
+          files: ./coverage/lcov.info
+          # files: ./clover.xml
