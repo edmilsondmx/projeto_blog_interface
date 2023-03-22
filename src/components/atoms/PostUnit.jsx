@@ -24,7 +24,7 @@ const StyledPost = styled.li`
   span {
     display: flex;
     gap: 16px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: ${(props) => props.theme.colors.main};
     font-weight: 400;
   }
