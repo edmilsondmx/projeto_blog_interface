@@ -1,23 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { useState } from "react";
 
 import GlobalStyle from "./styles/GlobalStyle";
 import ThemeProvider from "./styles/ThemeProvider";
-import AppRoutes from "./routes";
+import Routes from "./routes";
 
 function App() {
-  const [theme] = useState("dark");
-
-  // const handleClick = () => {
-  //   setTheme(theme === "dark" ? "light" : "dark");
-  // };
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <GlobalStyle />
       <Router>
-        <button>Tema</button>
-        <AppRoutes />
+        <Routes />
       </Router>
     </ThemeProvider>
   );
