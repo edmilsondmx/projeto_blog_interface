@@ -1,27 +1,24 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { useState } from "react";
 
 import GlobalStyle from "./styles/GlobalStyle";
 import ThemeProvider from "./styles/ThemeProvider";
+import AppRoutes from "./routes";
 
 function App() {
+  const [theme] = useState("dark");
+
+  // const handleClick = () => {
+  //   setTheme(theme === "dark" ? "light" : "dark");
+  // };
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <button>Tema</button>
+        <AppRoutes />
+      </Router>
     </ThemeProvider>
   );
 }

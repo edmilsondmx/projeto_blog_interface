@@ -8,13 +8,14 @@ const StyledPost = styled.li`
   width: 100%;
   flex-grow: 1;
   border-radius: 6px;
-  padding: 32px;
+  padding: 10px 32px;
   border: 2px solid ${(props) => props.theme.colors.border};
   cursor: pointer;
   list-style: none;
 
   h3 {
     text-transform: uppercase;
+    margin-top: 10px;
   }
 
   p {

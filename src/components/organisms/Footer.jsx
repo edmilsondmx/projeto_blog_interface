@@ -5,9 +5,11 @@ import Section from "../atoms/Section";
 import { BreakpointSizes, breakAt } from "../../styles/Breakpoints";
 
 const Root = styled.footer`
+  display: flex;
+  justify-content: center;
   background-color: ${(props) => props.theme.colors.bgCard};
   color: ${(props) => props.theme.colors.textOther};
-  padding: 40px 0;
+  padding: 10px 0;
   h6 {
     color: #fff;
     margin-top: 0;
