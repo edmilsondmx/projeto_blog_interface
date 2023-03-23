@@ -8,7 +8,7 @@ export default {
   component: PostList,
 };
 
-const listPosts = [
+export const listPosts = [
   {
     userId: 1,
     id: 1,

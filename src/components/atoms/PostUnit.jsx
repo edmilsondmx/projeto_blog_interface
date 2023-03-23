@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Heading from "./Heading";
 
 const StyledPost = styled.li`
   background-color: ${(props) => props.theme.colors.bgCard};
@@ -32,7 +33,9 @@ const StyledPost = styled.li`
 
 const PostUnit = ({ title, description, user }) => (
   <StyledPost>
-    <h3>{title}</h3>
+    <Heading>
+      <h3>{title}</h3>
+    </Heading>
     <p>{description}</p>
     <p>
       <span>{user} - 22/03/2023</span>
