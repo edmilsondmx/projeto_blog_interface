@@ -1,5 +1,4 @@
 import React from "react";
-// import PropTypes from "prop-types";
 
 import Menu from "../molecules/Menu";
 import Section from "../atoms/Section";
@@ -30,8 +29,5 @@ const Home = () => (
     <Footer />
   </>
 );
-// Home.defaultProps = {};
-
-// Home.propTypes = {};
 
 export default Home;
