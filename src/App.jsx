@@ -7,16 +7,16 @@ import ThemeProvider from "./styles/ThemeProvider";
 import AppRoutes from "./routes";
 
 function App() {
-  const [theme, setTheme] = useState("dark");
+  const [theme] = useState("dark");
 
-  const handleClick = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  // const handleClick = () => {
+  //   setTheme(theme === "dark" ? "light" : "dark");
+  // };
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
-        <button onClick={handleClick}>Tema</button>
+        <button>Tema</button>
         <AppRoutes />
       </Router>
     </ThemeProvider>
