@@ -12,7 +12,7 @@ const dark = {
     bgCard: "#151515",
     text: "#fff",
     textOther: "#c8c8c8",
-    main: "#3af2ff",
+    main: "#00A3FF",
     border: "#1F1F1F",
   },
 };
