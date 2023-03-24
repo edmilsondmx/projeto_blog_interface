@@ -11,7 +11,7 @@ const Heading = styled.div`
     position: relative;
     margin-bottom: 25px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #ffffff33;
+    border-bottom: 1px solid ${(props) => props.theme.colors.border};
 
     &::after {
       content: "";

@@ -3,7 +3,7 @@ import { render, screen } from "test-utils";
 import About from "./About";
 
 it("renders About page", () => {
-  render(<About></About>);
+  render(<About />);
 
   expect(screen.getByText(/Comunidade de aprendizado/i)).toBeInTheDocument();
 });

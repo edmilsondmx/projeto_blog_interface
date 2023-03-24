@@ -5,6 +5,6 @@ import Home from "./Home";
 it("renders Home page", () => {
   render(<Home />);
 
-  const linkElement = screen.getByText(/Blog/i);
+  const linkElement = screen.getByText(/Home/i);
   expect(linkElement).toBeInTheDocument();
 });
