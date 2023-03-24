@@ -13,6 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.9",
@@ -50,7 +51,8 @@
       "src/**/*.(js|jsx)",
       "!src/**/*.stories.(js|jsx)",
       "!src/reportWebVitals.js",
-      "!src/index.jsx"
+      "!src/index.jsx",
+      "!src/models/builders/*jsx"
     ]
   },
   "browserslist": {
@@ -78,6 +80,6 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
-    "webpack": "^5.76.2"
+    "webpack": "^5.76.3"
   }
 }
