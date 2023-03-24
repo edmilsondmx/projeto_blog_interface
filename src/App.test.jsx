@@ -3,6 +3,6 @@ import App from "./App";
 
 test("renders call to action", () => {
   render(<App />);
-  const linkElement = screen.getByText(/Home/i, { selector: "button" });
+  const linkElement = screen.getByText(/Home/i);
   expect(linkElement).toBeInTheDocument();
 });

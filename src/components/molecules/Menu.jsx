@@ -1,19 +1,18 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
-import Section from "../atoms/Section";
-import { BreakpointSizes, breakAt } from "../../styles/Breakpoints";
-import Button from "../atoms/Button";
+import Section from "components/atoms/Section";
+import { BreakpointSizes, breakAt } from "styles/Breakpoints";
+import UserType from "models/types/UserType";
 
-const Header = styled.header`
+export const Header = styled.header`
   background-color: ${(props) => props.theme.colors.bgDark};
 `;
 
-const Profile = styled.div`
+export const Profile = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
@@ -31,7 +30,7 @@ const Profile = styled.div`
   }
 `;
 
-const ContainerNav = styled.div`
+export const ContainerNav = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -80,6 +79,41 @@ const ContainerNav = styled.div`
   }
 `;
 
+const ButtonNav = styled.button`
+  background-color: ${(props) => props.theme.colors.bgDark};
+  font-size: 2rem;
+  color: ${(props) => props.theme.colors.textOther};
+  border: none;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.text};
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -7px;
+    left: 0;
+    background: linear-gradient(
+      270deg,
+      ${(props) => props.theme.colors.main} 0%,
+      ${(props) => props.theme.colors.bgDark} 100%
+    );
+    transform-origin: bottom right;
+    transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+`;
+
 const Menu = ({ image, alt, user }) => (
   <Header>
     <Section>
@@ -87,20 +121,20 @@ const Menu = ({ image, alt, user }) => (
         <Profile>
           <img src={image} alt={alt} />
           <h2>
-            Blog <span>|</span> {user}
+            Blog <span>|</span> {user?.name}
           </h2>
         </Profile>
         <nav>
           <ul>
             <li>
-              <Button as={Link} to="/">
+              <ButtonNav as={Link} to="/">
                 Home
-              </Button>
+              </ButtonNav>
             </li>
             <li>
-              <Button as={Link} to="/sobre">
+              <ButtonNav as={Link} to="/sobre">
                 Sobre
-              </Button>
+              </ButtonNav>
             </li>
           </ul>
         </nav>
@@ -117,7 +151,7 @@ Menu.defaultProps = {
 Menu.propTypes = {
   image: PropTypes.string,
   alt: PropTypes.string,
-  user: PropTypes.node,
+  user: PropTypes.objectOf(UserType),
 };
 
 export default Menu;
