@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/addon-viewport": "^6.5.16",
+    "@svgr/cli": "^6.5.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -11,6 +13,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4"
@@ -23,7 +27,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "lint": "eslint src/**/*.jsx"
+    "lint": "eslint src/**/*.jsx",
+    "svg": "svgr --icon --replace-attr-values '#ffc107=currentColor' -d src/draws/"
   },
   "eslintConfig": {
     "extends": [
@@ -46,7 +51,8 @@
       "src/**/*.(js|jsx)",
       "!src/**/*.stories.(js|jsx)",
       "!src/reportWebVitals.js",
-      "!src/index.jsx"
+      "!src/index.jsx",
+      "!src/models/builders/*jsx"
     ]
   },
   "browserslist": {
@@ -74,6 +80,6 @@
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
-    "webpack": "^5.76.2"
+    "webpack": "^5.76.3"
   }
 }

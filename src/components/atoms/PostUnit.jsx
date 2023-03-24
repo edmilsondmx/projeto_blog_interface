@@ -1,19 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Heading from "./Heading";
 
 const StyledPost = styled.li`
   background-color: ${(props) => props.theme.colors.bgCard};
   width: 100%;
   flex-grow: 1;
   border-radius: 6px;
-  padding: 32px;
+  padding: 10px 32px;
   border: 2px solid ${(props) => props.theme.colors.border};
   cursor: pointer;
   list-style: none;
 
   h3 {
     text-transform: uppercase;
+    margin-top: 10px;
   }
 
   p {
@@ -24,7 +26,7 @@ const StyledPost = styled.li`
   span {
     display: flex;
     gap: 16px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: ${(props) => props.theme.colors.main};
     font-weight: 400;
   }
@@ -32,7 +34,9 @@ const StyledPost = styled.li`
 
 const PostUnit = ({ title, description, user }) => (
   <StyledPost>
-    <h3>{title}</h3>
+    <Heading>
+      <h3>{title}</h3>
+    </Heading>
     <p>{description}</p>
     <p>
       <span>{user} - 22/03/2023</span>
