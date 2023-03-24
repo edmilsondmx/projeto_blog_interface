@@ -41,10 +41,12 @@ const Button = styled.button`
 const ButtonWrapper = ({ children }) => <Button>{children}</Button>;
 
 ButtonWrapper.defaultProps = {
+  type: "button",
   children: undefined,
 };
 
 ButtonWrapper.propTypes = {
+  type: PropTypes.string,
   children: PropTypes.node,
 };
 
