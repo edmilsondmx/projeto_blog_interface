@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const Button = styled.button`
-  background-color: ${(props) => props.theme.colors.bgDark};
+const Button = styled(Link)`
+  background-color: transparent;
   font-size: 2rem;
   color: ${(props) => props.theme.colors.textOther};
   border: none;
@@ -38,15 +39,15 @@ const Button = styled.button`
   }
 `;
 
-const ButtonWrapper = ({ children }) => <Button>{children}</Button>;
+const ButtonWrapper = ({ children, to }) => <Button to={to}>{children}</Button>;
 
 ButtonWrapper.defaultProps = {
-  type: "button",
   children: undefined,
+  to: undefined,
 };
 
 ButtonWrapper.propTypes = {
-  type: PropTypes.string,
+  to: PropTypes.string,
   children: PropTypes.node,
 };
 
