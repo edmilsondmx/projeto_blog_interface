@@ -1,32 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 import Menu from "../molecules/Menu";
 import Section from "../atoms/Section";
 import PostList from "../organisms/PostList";
 import PostUnit from "../atoms/PostUnit";
-import { listPosts } from "../organisms/PostList.stories";
 import Footer from "../organisms/Footer";
 import PostType from "models/types/PostType";
-import UserType from "models/types/UserType";
 
-const Home = ({ postList, user }) => (
+const TitleDiv = styled.div`
+  text-align: center;
+
+  h2 {
+    text-transform: uppercase;
+    color: ${(props) => props.theme.colors.main};
+  }
+`;
+
+const Home = ({ postList }) => (
   <>
-    <Menu
-      image="https://www.nj.com/resizer/zovGSasCaR41h_yUGYHXbVTQW2A=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg"
-      alt="avatar para perfil"
-      user={user}
-    />
+    <Menu />
     <Section>
+      <TitleDiv>
+        <h2>Últimos Posts</h2>
+      </TitleDiv>
       <PostList>
-        {listPosts.map((post) => (
-          <PostUnit
-            key={post.id}
-            title={post.title}
-            description={post.body}
-            user={post.userId.toString()}
-          />
-        ))}
+        {postList.length === 0 ? (
+          <h6>Carregando...</h6>
+        ) : (
+          postList.map((post) => (
+            <PostUnit
+              key={post.id}
+              title={post.title}
+              description={post.body}
+              to={`/post/${post.id}/comentarios`}
+            />
+          ))
+        )}
       </PostList>
     </Section>
     <Footer />
@@ -35,12 +46,10 @@ const Home = ({ postList, user }) => (
 
 Home.defaultProps = {
   postList: [],
-  user: undefined,
 };
 
 Home.propTypes = {
   postList: PropTypes.arrayOf(PostType),
-  user: PropTypes.objectOf(UserType),
 };
 
 export default Home;
