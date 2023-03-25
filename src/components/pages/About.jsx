@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 import Menu from "../molecules/Menu";
 import Footer from "../organisms/Footer";
@@ -9,9 +8,7 @@ import Grid from "../atoms/Grid";
 import AboutSvg from "../../draws/Blog";
 import Heading from "../atoms/Heading";
 
-import UserType from "models/types/UserType";
-
-export const ImageContainer = styled.div`
+const ImageContainer = styled.div`
   svg {
     margin-top: 20px;
     width: 100%;
@@ -20,17 +17,13 @@ export const ImageContainer = styled.div`
     color: ${(props) => props.theme.colors.main};
   }
 `;
-export const Content = styled.div`
+const Content = styled.div`
   margin-top: 30px;
 `;
 
-const About = ({ user }) => (
+const About = () => (
   <>
-    <Menu
-      image="https://www.nj.com/resizer/zovGSasCaR41h_yUGYHXbVTQW2A=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg"
-      alt="avatar para perfil"
-      user={user}
-    />
+    <Menu />
     <Section>
       <Grid md={2}>
         <Content>
@@ -103,17 +96,8 @@ const About = ({ user }) => (
         </div>
       </Grid>
     </Section>
-
     <Footer />
   </>
 );
-
-About.defaultProps = {
-  user: undefined,
-};
-
-About.propTypes = {
-  user: PropTypes.objectOf(UserType),
-};
 
 export default About;
