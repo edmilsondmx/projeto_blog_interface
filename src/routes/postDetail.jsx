@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PostDetailPage from "components/pages/PostDetail";
-import blogFetchApi from "../axios/config";
+import { BLOG_URL } from "constants/BLOG_URL";
 
 const PostDetail = () => {
   const [post, setPost] = useState({});
@@ -13,7 +14,7 @@ const PostDetail = () => {
 
   const getPost = async () => {
     try {
-      const response = await blogFetchApi.get(`/posts/${id}`);
+      const response = await axios.get(`${BLOG_URL}/posts/${id}`);
 
       const data = response.data;
 
@@ -24,7 +25,7 @@ const PostDetail = () => {
   };
   const getComments = async () => {
     try {
-      const response = await blogFetchApi.get(`/post/${id}/comments`);
+      const response = await axios.get(`${BLOG_URL}/post/${id}/comments`);
 
       const data = response.data;
 

@@ -50,7 +50,7 @@ const PostDetail = ({ post, commentsList }) => (
   </Root>
 );
 PostDetail.defaultProps = {
-  post: undefined,
+  post: {},
   commentsList: [],
 };
 
