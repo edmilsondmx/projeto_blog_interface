@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
+import Button from "components/atoms/Button";
 import Section from "components/atoms/Section";
 import Grid from "components/atoms/Grid";
 import Heading from "components/atoms/Heading";
@@ -26,20 +26,6 @@ const ErrorMessage = styled.p`
   font-size: 1.2rem;
 `;
 
-const ButtonError = styled.button`
-  background-color: ${(props) => props.theme.colors.bgDark};
-  font-size: 2rem;
-  color: ${(props) => props.theme.colors.textOther};
-  border: none;
-  position: relative;
-  cursor: pointer;
-  text-decoration: none;
-
-  &:hover {
-    color: ${(props) => props.theme.colors.text};
-  }
-`;
-
 const Error = ({ title, description, image }) => (
   <Section>
     <Grid sm={2}>
@@ -49,9 +35,7 @@ const Error = ({ title, description, image }) => (
         </Heading>
         <ErrorMessage>{description}</ErrorMessage>
         <div>
-          <ButtonError as={Link} to="/">
-            Ir para a página inicial
-          </ButtonError>
+          <Button to="/">Ir para a página inicial</Button>
         </div>
       </div>
       <div>
