@@ -10,7 +10,7 @@ const StyledList = styled.ul`
   flex-wrap: wrap;
   flex-grow: 1;
   gap: 40px;
-  padding: 80px 24px;
+  padding: 20px 24px;
   background-color: ${(props) => props.theme.colors.bgDark};
 `;
 

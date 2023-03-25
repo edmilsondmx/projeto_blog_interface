@@ -4,12 +4,17 @@ import styled from "styled-components";
 
 const StyledComment = styled.div`
   margin-top: 5px;
+  margin-bottom: 7px;
   background-color: ${(props) => props.theme.colors.bgCard};
   width: 100%;
   flex-grow: 1;
   border-radius: 6px;
   padding: 10px 32px;
-  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: 1px 1px 7px ${(props) => props.theme.colors.main};
+  }
 
   span {
     color: ${(props) => props.theme.colors.main};
@@ -40,13 +45,22 @@ const StyledComment = styled.div`
   }
 `;
 
+const StyledUserInfo = styled.div`
+  text-decoration: none;
+  color: ${(props) => props.theme.colors.textOther};
+
+  &:hover {
+    color: ${(props) => props.theme.colors.text};
+  }
+`;
+
 const Comments = ({ name, email, body }) => (
   <StyledComment>
-    <div>
+    <StyledUserInfo>
       <span>User</span>
       <h5>{name}</h5>
       <h6>{email}</h6>
-    </div>
+    </StyledUserInfo>
     <p>
       <span>Comment</span>
       {body}
