@@ -26,6 +26,6 @@ it("renders PostList with Postunit", () => {
   );
 
   expect(
-    screen.getByText(/sunt aut facere repellat/i, { selector: "h3" })
+    screen.getByText(/sunt aut facere repellat/i, { selector: "h4" })
   ).toBeInTheDocument();
 });
