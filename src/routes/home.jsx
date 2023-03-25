@@ -1,14 +1,15 @@
 import React from "react";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import HomePage from "../components/pages/Home";
-import blogFetchApi from "../axios/config";
+import { BLOG_URL } from "constants/BLOG_URL";
 
 const Home = () => {
   const [post, setPost] = useState([]);
 
   const getPosts = async () => {
     try {
-      const response = await blogFetchApi.get("/posts");
+      const response = await axios.get(`${BLOG_URL}/posts`);
 
       const data = response.data;
 

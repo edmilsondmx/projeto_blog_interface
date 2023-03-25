@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const PostType = PropTypes.shape({
-  userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  userId: PropTypes.number,
   id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   title: PropTypes.string,
   body: PropTypes.string,

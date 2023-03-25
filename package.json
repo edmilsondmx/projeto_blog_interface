@@ -53,7 +53,8 @@
       "!src/**/*.stories.(js|jsx)",
       "!src/reportWebVitals.js",
       "!src/index.jsx",
-      "!src/models/builders/*jsx"
+      "!src/models/builders/*jsx",
+      "!src/constants/*js"
     ]
   },
   "browserslist": {

@@ -1,26 +1,23 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import { Link } from "react-router-dom";
-
+import Button from "components/atoms/Button";
 import Section from "components/atoms/Section";
 import { BreakpointSizes, breakAt } from "styles/Breakpoints";
-import UserType from "models/types/UserType";
 
-export const Header = styled.header`
+const Header = styled.header`
   background-color: ${(props) => props.theme.colors.bgDark};
 `;
 
-export const Profile = styled.div`
+const Profile = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
 
   img {
     display: none;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 100%;
     border: 2px solid ${(props) => props.theme.colors.main};
 
@@ -30,7 +27,7 @@ export const Profile = styled.div`
   }
 `;
 
-export const ContainerNav = styled.div`
+const ContainerNav = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -79,62 +76,26 @@ export const ContainerNav = styled.div`
   }
 `;
 
-const ButtonNav = styled.button`
-  background-color: ${(props) => props.theme.colors.bgDark};
-  font-size: 2rem;
-  color: ${(props) => props.theme.colors.textOther};
-  border: none;
-  position: relative;
-  cursor: pointer;
-
-  &:hover {
-    color: ${(props) => props.theme.colors.text};
-  }
-
-  &:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: -7px;
-    left: 0;
-    background: linear-gradient(
-      270deg,
-      ${(props) => props.theme.colors.main} 0%,
-      ${(props) => props.theme.colors.bgDark} 100%
-    );
-    transform-origin: bottom right;
-    transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
-  }
-`;
-
-const Menu = ({ image, alt, user }) => (
+const Menu = () => (
   <Header>
     <Section>
       <ContainerNav>
         <Profile>
-          <img src={image} alt={alt} />
+          <img
+            src="https://www.nj.com/resizer/zovGSasCaR41h_yUGYHXbVTQW2A=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/SJGKVE5UNVESVCW7BBOHKQCZVE.jpg"
+            alt="avatar para perfil"
+          />
           <h2>
-            Blog <span>|</span> {user?.name}
+            Blog <span>|</span> DevBlog
           </h2>
         </Profile>
         <nav>
           <ul>
             <li>
-              <ButtonNav as={Link} to="/">
-                Home
-              </ButtonNav>
+              <Button to="/">Home</Button>
             </li>
             <li>
-              <ButtonNav as={Link} to="/sobre">
-                Sobre
-              </ButtonNav>
+              <Button to="/sobre">Sobre</Button>
             </li>
           </ul>
         </nav>
@@ -142,16 +103,5 @@ const Menu = ({ image, alt, user }) => (
     </Section>
   </Header>
 );
-Menu.defaultProps = {
-  image: undefined,
-  alt: undefined,
-  user: undefined,
-};
-
-Menu.propTypes = {
-  image: PropTypes.string,
-  alt: PropTypes.string,
-  user: PropTypes.objectOf(UserType),
-};
 
 export default Menu;
