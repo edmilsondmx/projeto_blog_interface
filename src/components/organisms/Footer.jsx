@@ -26,6 +26,10 @@ const Root = styled.footer`
       flex-direction: row;
       justify-content: space-between;
     }
+
+    span {
+      color: ${(props) => props.theme.colors.main};
+    }
   }
 `;
 
@@ -43,9 +47,10 @@ const Footer = () => (
   <Root>
     <Section>
       <div>
-        <FooterLink href="https://www.google.com">Instagram</FooterLink>
+        <FooterLink href="https://www.instagram.com">Instagram</FooterLink>
+        <span>Edmilson Gomes</span>
         <p>Copyright © 2023</p>
-        <FooterLink href="https://www.google.com">Twiter</FooterLink>
+        <FooterLink href="https://www.twitter.com">Twitter</FooterLink>
       </div>
     </Section>
   </Root>

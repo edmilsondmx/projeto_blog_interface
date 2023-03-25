@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UserDataPage from "components/pages/UserData";
-import blogFetchApi from "../axios/config";
 import BgBlog from "assets/BgBlog.jpg";
 import AvatarImg from "assets/avatar.jpg";
+import { BLOG_URL } from "constants/BLOG_URL";
 
 const UserData = () => {
   const [user, setUser] = useState({});
@@ -14,7 +15,7 @@ const UserData = () => {
 
   const getUser = async () => {
     try {
-      const response = await blogFetchApi.get(`/users/${userId}`);
+      const response = await axios.get(`${BLOG_URL}/users/${userId}`);
       console.log(userId);
 
       const data = response.data;

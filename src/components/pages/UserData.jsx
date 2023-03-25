@@ -48,7 +48,7 @@ const DataUser = styled.div`
   }
 `;
 
-const UserData = ({ image, avatar, user, address, company }) => (
+const UserData = ({ image, avatar, user }) => (
   <>
     <Menu />
     <Section>
