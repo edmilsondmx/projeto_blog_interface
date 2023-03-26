@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import { BreakpointSizes, breakAt } from "styles/Breakpoints";
+
 const StyledComment = styled.div`
   margin-top: 5px;
   margin-bottom: 7px;
@@ -9,8 +11,12 @@ const StyledComment = styled.div`
   width: 100%;
   flex-grow: 1;
   border-radius: 6px;
-  padding: 10px 32px;
+  padding: 10px 12px;
   transition: 0.5s;
+
+  ${breakAt(BreakpointSizes.md)} {
+    padding: 10px 32px;
+  }
 
   &:hover {
     box-shadow: 1px 1px 7px ${(props) => props.theme.colors.main};
