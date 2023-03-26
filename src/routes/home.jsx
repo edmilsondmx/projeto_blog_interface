@@ -5,7 +5,7 @@ import HomePage from "../components/pages/Home";
 import { BLOG_URL } from "constants/BLOG_URL";
 
 const Home = () => {
-  const [post, setPost] = useState([]);
+  const [posts, setPost] = useState([]);
 
   const getPosts = async () => {
     try {
@@ -23,7 +23,7 @@ const Home = () => {
     getPosts();
   }, []);
 
-  return <HomePage postList={post} />;
+  return <HomePage postList={posts} />;
 };
 
 export default Home;

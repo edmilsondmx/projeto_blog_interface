@@ -1,8 +1,8 @@
 import React from "react";
 
-import Comments from "./Comments";
-import Section from "./Section";
-import Grid from "./Grid";
+import Comments from "components/atoms/Comments";
+import Section from "components/atoms/Section";
+import Grid from "components/atoms/Grid";
 
 export default {
   title: "Components/Atoms/Comments",
