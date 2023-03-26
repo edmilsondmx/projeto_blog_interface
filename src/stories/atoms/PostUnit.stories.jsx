@@ -1,6 +1,6 @@
 import React from "react";
 
-import PostUnit from "./PostUnit";
+import PostUnit from "components/atoms/PostUnit";
 
 export default {
   title: "Components/Atoms/PostUnit",

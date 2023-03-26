@@ -1,7 +1,7 @@
 import React from "react";
 
-import Error from "./Error";
-import SvgTaken from "../../draws/Taken";
+import Error from "components/pages/Error";
+import SvgTaken from "draws/Taken";
 
 export default {
   title: "Components/Pages/Error",

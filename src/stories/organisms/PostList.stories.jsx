@@ -1,7 +1,7 @@
 import React from "react";
 
-import PostList from "./PostList";
-import PostUnit from "../atoms/PostUnit";
+import PostList from "components/organisms/PostList";
+import PostUnit from "components/atoms/PostUnit";
 
 import { buildPostList } from "models/builders/posts";
 

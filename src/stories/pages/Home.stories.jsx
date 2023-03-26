@@ -1,6 +1,6 @@
 import React from "react";
 
-import Home from "./Home";
+import Home from "components/pages/Home";
 import { buildPostList } from "models/builders/posts";
 
 export default {
