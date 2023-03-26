@@ -1,6 +1,6 @@
 import React from "react";
 
-import UserData from "./UserData";
+import UserData from "components/pages/UserData";
 import BgBlog from "assets/BgBlog.jpg";
 import AvatarImg from "assets/avatar.jpg";
 import { buildUser } from "models/builders/user";

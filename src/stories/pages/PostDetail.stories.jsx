@@ -1,6 +1,6 @@
 import React from "react";
 
-import PostDetail from "./PostDetail";
+import PostDetail from "components/pages/PostDetail";
 import { buildComments } from "models/builders/comments";
 import { buildPost } from "models/builders/posts";
 

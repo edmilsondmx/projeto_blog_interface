@@ -1,6 +1,6 @@
 import React from "react";
 
-import About from "./About";
+import About from "components/pages/About";
 
 export default {
   title: "Components/Pages/About",

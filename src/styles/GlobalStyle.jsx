@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Poppins", sans-serif;
   }
 
-  h1, h2, h3, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
     font-weight: 600;
     letter-spacing: 2px;
@@ -42,6 +42,13 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 2rem;
+
+    ${breakAt(BreakpointSizes.md)} {
+      font-size: 2.2rem;
+    }
+    ${breakAt(BreakpointSizes.lg)} {
+      font-size: 2.7rem;
+    }
 
   }
 

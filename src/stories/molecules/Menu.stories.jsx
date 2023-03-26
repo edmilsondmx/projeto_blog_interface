@@ -1,6 +1,6 @@
 import React from "react";
 
-import Menu from "./Menu";
+import Menu from "components/molecules/Menu";
 
 export default {
   title: "Components/Molecules/Menu",

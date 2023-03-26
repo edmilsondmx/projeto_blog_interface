@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "./Heading";
+import Heading from "components/atoms/Heading";
 import { text } from "@storybook/addon-knobs";
 import styled from "styled-components";
 
