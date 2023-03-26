@@ -19,4 +19,5 @@ Este projeto foi criado com React, utilizando o Styled-Components e a ferramenta
 ### Resultado Final:
 
 - [Demonstração online da aplicação](https://projeto-blog-interface.vercel.app/)
-- [Biblioteca de componentes](https://)
+- [Biblioteca de componentes Chromatic](https://www.chromatic.com/library?appId=6420a3e248a2906148c36458&branch=master)
+- [Biblioteca de componentes Storybook](https://master--6420a3e248a2906148c36458.chromatic.com)
