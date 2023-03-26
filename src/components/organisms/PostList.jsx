@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { BreakpointSizes, breakAt } from "styles/Breakpoints";
 
 const StyledList = styled.ul`
   margin: 0 auto;
@@ -10,8 +11,12 @@ const StyledList = styled.ul`
   flex-wrap: wrap;
   flex-grow: 1;
   gap: 40px;
-  padding: 20px 24px;
+  padding: 5px 9px;
   background-color: ${(props) => props.theme.colors.bgDark};
+
+  ${breakAt(BreakpointSizes.md)} {
+    padding: 20px 24px;
+  }
 `;
 
 const PostList = ({ children }) => <StyledList>{children}</StyledList>;

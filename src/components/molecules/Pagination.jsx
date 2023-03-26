@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import styled from "styled-components";
+import { BreakpointSizes, breakAt } from "styles/Breakpoints";
 
 const Content = styled.div`
   width: 100%;
@@ -25,10 +26,14 @@ const Container = styled.div`
   li {
     transition: all 0.5s ease;
     border-radius: 100%;
-    padding: 1rem 1.6rem;
-    margin: 0 0.5rem;
     user-select: none;
     cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin: 0 0.3rem;
+    ${breakAt(BreakpointSizes.sm)} {
+      padding: 1rem 1.6rem;
+      margin: 0 0.5rem;
+    }
   }
 
   .active {
@@ -46,7 +51,11 @@ const Container = styled.div`
     color: inherit;
     border: none;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+
+    ${breakAt(BreakpointSizes.sm)} {
+      font-size: 1.2rem;
+    }
   }
 `;
 
