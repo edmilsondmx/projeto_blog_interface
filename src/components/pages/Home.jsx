@@ -38,7 +38,7 @@ const Home = ({
           <h2>Últimos Posts</h2>
         </TitleDiv>
         <PostList>
-          {currentPosts?.length === 0 ? (
+          {!currentPosts ? (
             <Loading>Carregando...</Loading>
           ) : (
             currentPosts.map((post) => (
