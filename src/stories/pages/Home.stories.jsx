@@ -8,6 +8,6 @@ export default {
   component: Home,
 };
 
-const postsList = buildPostList(10);
+const postsList = buildPostList(20);
 
-export const usage = () => <Home postList={postsList} />;
+export const usage = () => <Home currentPosts={postsList} />;

@@ -7,8 +7,12 @@ export default {
   component: Pagination,
 };
 
-export const usage = () => <Pagination />;
-
-export const withPag = () => (
-  <Pagination postsPerPage={10} totalPosts={100} currentPage={1} />
+export const usage = () => (
+  <Pagination
+    postsPerPage={10}
+    totalPosts={100}
+    currentPage={1}
+    scrollToTop={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+    paginate={() => console.log("ok")}
+  />
 );

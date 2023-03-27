@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import styled from "styled-components";
 import { BreakpointSizes, breakAt } from "styles/Breakpoints";
 
@@ -40,6 +41,9 @@ const Container = styled.div`
     background-color: ${(props) => props.theme.colors.bgCard};
     color: ${(props) => props.theme.colors.main};
   }
+  .disable {
+    display: none;
+  }
 
   li:hover {
     background-color: ${(props) => props.theme.colors.main};
@@ -59,10 +63,20 @@ const Container = styled.div`
   }
 `;
 
-const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
+const Pagination = ({
+  postsPerPage,
+  totalPosts,
+  paginate,
+  currentPage,
+  scrollToTop,
+}) => {
   const pageNum = [];
   const [firstPage, setFirstPage] = useState(currentPage - 1);
   const [lastPage, setLastPage] = useState(currentPage + 4);
+
+  useEffect(() => {
+    scrollToTop();
+  }, [currentPage, scrollToTop]);
 
   const totalPages = Math.ceil(totalPosts / postsPerPage);
 
@@ -106,6 +120,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
     <Container>
       <ul>
         <li
+          className={`${currentPage === 1 ? "disable" : ""}`}
           onClick={() => {
             paginate(1);
             handleUpdatePages(1);
@@ -126,6 +141,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
           </li>
         ))}
         <li
+          className={`${currentPage === totalPages ? "disable" : ""}`}
           onClick={() => {
             paginate(lastPage);
             handleUpdatePages(lastPage);
