@@ -29,6 +29,8 @@ const Home = ({
   postPerPage,
   paginate,
   currentPage,
+  getUsername,
+  username,
 }) => {
   return (
     <>
@@ -47,6 +49,8 @@ const Home = ({
                 title={post.title}
                 description={post.body}
                 to={`/post/${post.id}/comentarios`}
+                username={username}
+                getUsername={getUsername(post.userId)}
               />
             ))
           )}
