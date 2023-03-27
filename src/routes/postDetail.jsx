@@ -10,6 +10,8 @@ const PostDetail = () => {
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
 
+  const [username, setUsername] = useState("");
+
   const { id } = useParams();
 
   const getPost = async () => {
@@ -19,6 +21,7 @@ const PostDetail = () => {
       const data = response.data;
 
       setPost(data);
+      getUsername(data.userId);
     } catch (error) {
       console.error(error);
     }
@@ -40,7 +43,21 @@ const PostDetail = () => {
     getComments();
   }, []);
 
-  return <PostDetailPage post={post} commentsList={comments} />;
+  const getUsername = async (userId) => {
+    try {
+      const response = await axios.get(`${BLOG_URL}/users/${userId}`);
+
+      const data = response.data.name;
+
+      setUsername(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <PostDetailPage post={post} commentsList={comments} username={username} />
+  );
 };
 
 export default PostDetail;

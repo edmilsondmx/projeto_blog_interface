@@ -29,28 +29,38 @@ const StyledPost = styled.li`
     font-size: 1.2rem;
   }
 
-  span {
+  i {
     display: flex;
     gap: 16px;
     font-size: 1rem;
-    color: ${(props) => props.theme.colors.main};
     font-weight: 400;
+    justify-content: end;
+  }
+  span {
+    color: ${(props) => props.theme.colors.main};
   }
 `;
 
-const PostUnit = ({ title, description, to, display, toPerfil }) => (
-  <StyledPost>
-    <Heading>
-      <h4>{title}</h4>
-    </Heading>
-    <p>{description}</p>
-    {display ? (
-      <Button to={to}>Ler mais</Button>
-    ) : (
-      <Button to={toPerfil}>Ver Perfil</Button>
-    )}
-  </StyledPost>
-);
+const PostUnit = ({ title, description, to, display, toPerfil, username }) => {
+  return (
+    <StyledPost>
+      <Heading>
+        <h4>{title}</h4>
+      </Heading>
+      <p>{description}</p>
+      {display ? (
+        <Button to={to}>Ler mais</Button>
+      ) : (
+        <Button to={toPerfil}>Ver Perfil</Button>
+      )}
+      <div>
+        <i>
+          Post by: <span>{username}</span>
+        </i>
+      </div>
+    </StyledPost>
+  );
+};
 
 PostUnit.defaultProps = {
   title: undefined,

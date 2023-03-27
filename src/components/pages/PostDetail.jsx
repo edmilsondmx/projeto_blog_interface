@@ -21,7 +21,7 @@ const Loading = styled.h3`
   color: ${(props) => props.theme.colors.main};
 `;
 
-const PostDetail = ({ post, commentsList }) => (
+const PostDetail = ({ post, commentsList, username }) => (
   <Root>
     <Menu />
     <Section>
@@ -35,6 +35,7 @@ const PostDetail = ({ post, commentsList }) => (
             description={post.body}
             display={false}
             toPerfil={`/user/${post.userId}/perfil`}
+            username={username}
           />
         </div>
       )}
