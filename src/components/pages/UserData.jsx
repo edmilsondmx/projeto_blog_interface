@@ -55,64 +55,68 @@ const UserData = ({ image, avatar, user }) => (
       <ContentProfile image={image} data-testid="userData">
         <ImgProfile src={avatar} />
       </ContentProfile>
-      <Grid md={2}>
-        <DataUser>
-          <Heading>
-            <h5>Dados Pessoais</h5>
-          </Heading>
-          <div>
-            <span>Name:</span>
-            <p>{user.name}</p>
-            <span>Username:</span>
-            <p>{user.username}</p>
-            <span>E-mail:</span>
-            <p>{user.email}</p>
-            <span>Phone:</span>
-            <p>{user.email}</p>
-            <span>Website:</span>
-            <p>{user.email}</p>
-          </div>
-        </DataUser>
-        <DataUser>
-          <Heading>
-            <h5>Endereço</h5>
-          </Heading>
-          <div>
-            <span>Street:</span>
-            <p>{user?.address?.street}</p>
-            <span>Suite:</span>
-            <p>{user.address?.suite}</p>
-            <span>City:</span>
-            <p>{user.address?.city}</p>
-            <span>ZipCode:</span>
-            <p>{user.address?.zipcode}</p>
-          </div>
-        </DataUser>
-        <DataUser>
-          <Heading>
-            <h5>Geo-Localização</h5>
-          </Heading>
-          <div>
-            <span>Latitude:</span>
-            <p>{user.address?.geo.lat}</p>
-            <span>Longitude:</span>
-            <p>{user.address?.geo.lng}</p>
-          </div>
-        </DataUser>
-        <DataUser>
-          <Heading>
-            <h5>Empresa</h5>
-          </Heading>
-          <div>
-            <span>Name:</span>
-            <p>{user.company?.name}</p>
-            <span>Catch Phrase:</span>
-            <p>{user.company?.catchPhrase}</p>
-            <span>BS:</span>
-            <p>{user.company?.bs}</p>
-          </div>
-        </DataUser>
-      </Grid>
+      {Object.keys(user).length === 0 ? (
+        <h3>Carregando...</h3>
+      ) : (
+        <Grid md={2}>
+          <DataUser>
+            <Heading>
+              <h5>Dados Pessoais</h5>
+            </Heading>
+            <div>
+              <span>Name:</span>
+              <p>{user.name}</p>
+              <span>Username:</span>
+              <p>{user.username}</p>
+              <span>E-mail:</span>
+              <p>{user.email}</p>
+              <span>Phone:</span>
+              <p>{user.email}</p>
+              <span>Website:</span>
+              <p>{user.email}</p>
+            </div>
+          </DataUser>
+          <DataUser>
+            <Heading>
+              <h5>Endereço</h5>
+            </Heading>
+            <div>
+              <span>Street:</span>
+              <p>{user?.address?.street}</p>
+              <span>Suite:</span>
+              <p>{user.address?.suite}</p>
+              <span>City:</span>
+              <p>{user.address?.city}</p>
+              <span>ZipCode:</span>
+              <p>{user.address?.zipcode}</p>
+            </div>
+          </DataUser>
+          <DataUser>
+            <Heading>
+              <h5>Geo-Localização</h5>
+            </Heading>
+            <div>
+              <span>Latitude:</span>
+              <p>{user.address?.geo.lat}</p>
+              <span>Longitude:</span>
+              <p>{user.address?.geo.lng}</p>
+            </div>
+          </DataUser>
+          <DataUser>
+            <Heading>
+              <h5>Empresa</h5>
+            </Heading>
+            <div>
+              <span>Name:</span>
+              <p>{user.company?.name}</p>
+              <span>Catch Phrase:</span>
+              <p>{user.company?.catchPhrase}</p>
+              <span>BS:</span>
+              <p>{user.company?.bs}</p>
+            </div>
+          </DataUser>
+        </Grid>
+      )}
     </Section>
     <Footer />
   </>

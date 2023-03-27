@@ -17,23 +17,31 @@ const Root = styled.div`
   }
 `;
 
+const Loading = styled.h3`
+  color: ${(props) => props.theme.colors.main};
+`;
+
 const PostDetail = ({ post, commentsList }) => (
   <Root>
     <Menu />
     <Section>
-      <div className="post">
-        <p>Post:</p>
-        <PostUnit
-          title={post.title}
-          description={post.body}
-          display={false}
-          toPerfil={`/user/${post.userId}/perfil`}
-        />
-      </div>
+      {Object.keys(post).length === 0 ? (
+        <Loading>Aguarde...</Loading>
+      ) : (
+        <div className="post">
+          <p>Post:</p>
+          <PostUnit
+            title={post.title}
+            description={post.body}
+            display={false}
+            toPerfil={`/user/${post.userId}/perfil`}
+          />
+        </div>
+      )}
       <p>Comentários:</p>
       <Grid lg={2}>
         {commentsList.length === 0 ? (
-          <h6>Carregando...</h6>
+          <Loading>Carregando...</Loading>
         ) : (
           commentsList.map((comment) => (
             <Comments
