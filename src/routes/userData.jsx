@@ -16,7 +16,6 @@ const UserData = () => {
   const getUser = async () => {
     try {
       const response = await axios.get(`${BLOG_URL}/users/${userId}`);
-      console.log(userId);
 
       const data = response.data;
 

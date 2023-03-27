@@ -10,4 +10,6 @@ export default {
 
 const postsList = buildPostList(20);
 
-export const usage = () => <Home currentPosts={postsList} />;
+export const usage = () => (
+  <Home currentPosts={postsList} getUsername={() => {}} />
+);
