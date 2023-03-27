@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { faker } from "@faker-js/faker";
 
 import { BreakpointSizes, breakAt } from "styles/Breakpoints";
 import Heading from "./Heading";
@@ -55,6 +56,10 @@ const PostUnit = ({ title, description, to, display, toPerfil, username }) => {
       )}
       <div>
         <i>
+          <span>
+            {faker.date.past().toLocaleDateString()} -{" "}
+            {faker.date.past().toLocaleTimeString()}
+          </span>
           Post by: <span>{username}</span>
         </i>
       </div>

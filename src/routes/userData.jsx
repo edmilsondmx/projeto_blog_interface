@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UserDataPage from "components/pages/UserData";
 import BgBlog from "assets/BgBlog.jpg";
-import AvatarImg from "assets/avatar.jpg";
 import { BLOG_URL } from "constants/BLOG_URL";
+import { faker } from "@faker-js/faker";
 
 const UserData = () => {
   const [user, setUser] = useState({});
@@ -26,7 +26,9 @@ const UserData = () => {
   useEffect(() => {
     getUser();
   }, []);
-  return <UserDataPage image={BgBlog} avatar={AvatarImg} user={user} />;
+  return (
+    <UserDataPage image={BgBlog} avatar={faker.image.avatar()} user={user} />
+  );
 };
 
 export default UserData;
