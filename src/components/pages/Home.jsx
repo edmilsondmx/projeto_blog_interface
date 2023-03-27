@@ -63,6 +63,9 @@ const Home = ({ postList }) => {
           totalPosts={postList?.length}
           paginate={paginate}
           currentPage={currentPage}
+          scrollToTop={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+          }
         />
       </Section>
       <Footer />
