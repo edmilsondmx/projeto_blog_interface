@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import styled from "styled-components";
+import { BreakpointSizes, breakAt } from "styles/Breakpoints";
 
 const Content = styled.div`
   width: 100%;
@@ -25,15 +27,22 @@ const Container = styled.div`
   li {
     transition: all 0.5s ease;
     border-radius: 100%;
-    padding: 1rem 1.6rem;
-    margin: 0 0.5rem;
     user-select: none;
     cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin: 0 0.3rem;
+    ${breakAt(BreakpointSizes.sm)} {
+      padding: 1rem 1.6rem;
+      margin: 0 0.5rem;
+    }
   }
 
   .active {
     background-color: ${(props) => props.theme.colors.bgCard};
     color: ${(props) => props.theme.colors.main};
+  }
+  .disable {
+    display: none;
   }
 
   li:hover {
@@ -46,14 +55,28 @@ const Container = styled.div`
     color: inherit;
     border: none;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+
+    ${breakAt(BreakpointSizes.sm)} {
+      font-size: 1.2rem;
+    }
   }
 `;
 
-const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
+const Pagination = ({
+  postsPerPage,
+  totalPosts,
+  paginate,
+  currentPage,
+  scrollToTop,
+}) => {
   const pageNum = [];
   const [firstPage, setFirstPage] = useState(currentPage - 1);
   const [lastPage, setLastPage] = useState(currentPage + 4);
+
+  useEffect(() => {
+    scrollToTop();
+  }, [currentPage, scrollToTop]);
 
   const totalPages = Math.ceil(totalPosts / postsPerPage);
 
@@ -97,6 +120,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
     <Container>
       <ul>
         <li
+          className={`${currentPage === 1 ? "disable" : ""}`}
           onClick={() => {
             paginate(1);
             handleUpdatePages(1);
@@ -117,6 +141,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
           </li>
         ))}
         <li
+          className={`${currentPage === totalPages ? "disable" : ""}`}
           onClick={() => {
             paginate(lastPage);
             handleUpdatePages(lastPage);

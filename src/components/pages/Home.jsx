@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { useState } from "react";
 
 import Menu from "../molecules/Menu";
 import Section from "../atoms/Section";
@@ -24,19 +23,13 @@ const Loading = styled.h3`
   color: ${(props) => props.theme.colors.main};
 `;
 
-const Home = ({ postList }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const postPerPage = 10;
-
-  const indexOfLastPost = currentPage * postPerPage;
-  const indexOfFirstPost = indexOfLastPost - postPerPage;
-  const currentPosts = postList?.slice(indexOfFirstPost, indexOfLastPost);
-
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
+const Home = ({
+  postList,
+  currentPosts,
+  postPerPage,
+  paginate,
+  currentPage,
+}) => {
   return (
     <>
       <Menu />
@@ -45,7 +38,7 @@ const Home = ({ postList }) => {
           <h2>Últimos Posts</h2>
         </TitleDiv>
         <PostList>
-          {currentPosts.length === 0 ? (
+          {!currentPosts ? (
             <Loading>Carregando...</Loading>
           ) : (
             currentPosts.map((post) => (
@@ -63,6 +56,9 @@ const Home = ({ postList }) => {
           totalPosts={postList?.length}
           paginate={paginate}
           currentPage={currentPage}
+          scrollToTop={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
+          }
         />
       </Section>
       <Footer />

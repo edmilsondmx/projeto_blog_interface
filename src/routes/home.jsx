@@ -6,6 +6,13 @@ import { BLOG_URL } from "constants/BLOG_URL";
 
 const Home = () => {
   const [posts, setPost] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const postPerPage = 10;
+
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   const getPosts = async () => {
     try {
@@ -19,11 +26,23 @@ const Home = () => {
     }
   };
 
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   useEffect(() => {
     getPosts();
   }, []);
 
-  return <HomePage postList={posts} />;
+  return (
+    <HomePage
+      postList={posts}
+      currentPosts={currentPosts}
+      currentPage={currentPage}
+      postPerPage={postPerPage}
+      paginate={paginate}
+    />
+  );
 };
 
 export default Home;

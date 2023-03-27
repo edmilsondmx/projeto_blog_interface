@@ -5,11 +5,12 @@ import { BreakpointSizes, breakAt } from "../../styles/Breakpoints";
 
 const Container = styled.div`
   width: 100%;
-  padding: 0 24px;
+  padding: 5px;
 
   ${breakAt(BreakpointSizes.lg)} {
     max-width: 1140px;
     margin: 0 auto;
+    padding: 0 24px;
   }
 `;
 Container.defaultProps = {

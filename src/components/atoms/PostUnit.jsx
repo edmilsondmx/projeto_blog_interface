@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import { BreakpointSizes, breakAt } from "styles/Breakpoints";
 import Heading from "./Heading";
 import Button from "./Button";
 
@@ -10,9 +11,13 @@ const StyledPost = styled.li`
   width: 100%;
   flex-grow: 1;
   border-radius: 6px;
-  padding: 10px 32px;
+  padding: 10px 12px;
   border: 2px solid ${(props) => props.theme.colors.border};
   list-style: none;
+
+  ${breakAt(BreakpointSizes.md)} {
+    padding: 10px 32px;
+  }
 
   h4 {
     text-transform: capitalize;
