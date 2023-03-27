@@ -14,6 +14,7 @@ const ContentProfile = styled.div`
   padding: 50px 0;
   display: flex;
   justify-content: center;
+  border-radius: 6px;
 
   ${(props) => css`
     background: url(${props.image}), rgba(0, 0, 0, 0.5);
@@ -25,6 +26,7 @@ const ContentProfile = styled.div`
 const ImgProfile = styled.img`
   border-radius: 100%;
   max-width: 130px;
+  border: 3px solid ${(props) => props.theme.colors.main};
 `;
 
 const DataUser = styled.div`

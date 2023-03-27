@@ -30,6 +30,7 @@ const Profile = styled.div`
 const ContainerNav = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   padding: 5px;
   position: relative;
@@ -46,6 +47,7 @@ const ContainerNav = styled.div`
   }
 
   ${breakAt(BreakpointSizes.sm)} {
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     gap: 32px;

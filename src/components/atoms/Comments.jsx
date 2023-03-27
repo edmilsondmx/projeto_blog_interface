@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { faker } from "@faker-js/faker";
 
 import { BreakpointSizes, breakAt } from "styles/Breakpoints";
 
 const StyledComment = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 5px;
   margin-bottom: 7px;
   background-color: ${(props) => props.theme.colors.bgCard};
@@ -42,6 +46,14 @@ const StyledComment = styled.div`
     font-size: 1rem;
   }
 
+  i {
+    display: flex;
+    gap: 16px;
+    font-size: 1rem;
+    font-weight: 400;
+    justify-content: end;
+  }
+
   span {
     display: flex;
     gap: 16px;
@@ -71,6 +83,12 @@ const Comments = ({ name, email, body }) => (
       <span>Comment</span>
       {body}
     </p>
+    <i>
+      <span>
+        {faker.date.past().toLocaleDateString()} -{" "}
+        {faker.date.past().toLocaleTimeString()}
+      </span>
+    </i>
   </StyledComment>
 );
 Comments.defaultProps = {
