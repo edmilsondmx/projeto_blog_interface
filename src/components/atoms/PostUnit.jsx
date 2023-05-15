@@ -28,17 +28,26 @@ const StyledPost = styled.li`
   p {
     margin: 24px 0px;
     font-size: 1.2rem;
+    padding-bottom: 20px;
   }
 
   i {
+    margin-top: 19px;
     display: flex;
-    gap: 16px;
     font-size: 1rem;
     font-weight: 400;
-    justify-content: end;
-  }
-  span {
-    color: ${(props) => props.theme.colors.main};
+    flex-direction: column;
+    align-items: flex-end;
+
+    ${breakAt(BreakpointSizes.sm)} {
+      gap: 16px;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    span {
+      color: ${(props) => props.theme.colors.main};
+    }
   }
 `;
 
@@ -50,9 +59,13 @@ const PostUnit = ({ title, description, to, display, toPerfil, username }) => {
       </Heading>
       <p>{description}</p>
       {display ? (
-        <Button to={to}>Ler mais</Button>
+        <Button to={to} variant="btnBody">
+          Read more
+        </Button>
       ) : (
-        <Button to={toPerfil}>Ver Perfil</Button>
+        <Button to={toPerfil} variant="btnBody">
+          View profile
+        </Button>
       )}
       <div>
         <i>
@@ -60,7 +73,9 @@ const PostUnit = ({ title, description, to, display, toPerfil, username }) => {
             {faker.date.past().toLocaleDateString()} -{" "}
             {faker.date.past().toLocaleTimeString()}
           </span>
-          Post by: <span>{username}</span>
+          <strong>
+            Post by: <span>{username}</span>
+          </strong>
         </i>
       </div>
     </StyledPost>
@@ -71,13 +86,15 @@ PostUnit.defaultProps = {
   title: undefined,
   description: undefined,
   to: undefined,
+  toPerfil: undefined,
   display: true,
 };
 
 PostUnit.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  to: PropTypes.string,
+  to: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  toPerfil: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   display: PropTypes.bool,
 };
 

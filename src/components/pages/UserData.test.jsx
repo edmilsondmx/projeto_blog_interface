@@ -9,6 +9,6 @@ it("renders UserData page", () => {
   render(<UserData user={buildUser[0]} image={BgBlog} avatar={AvatarImg} />);
 
   expect(
-    screen.getByText(/Dados Pessoais/i, { selector: "h5" })
+    screen.getByText(/Personal data/i, { selector: "h5" })
   ).toBeInTheDocument();
 });

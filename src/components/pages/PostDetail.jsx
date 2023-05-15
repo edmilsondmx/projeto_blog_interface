@@ -7,9 +7,10 @@ import Section from "components/atoms/Section";
 import PostUnit from "components/atoms/PostUnit";
 import Grid from "components/atoms/Grid";
 import Comments from "components/atoms/Comments";
-import PostType from "models/types/PostType";
 import CommentType from "models/types/CommentType";
 import Footer from "components/organisms/Footer";
+
+import Loader from "components/atoms/Loader";
 
 const Root = styled.div`
   .post {
@@ -17,54 +18,53 @@ const Root = styled.div`
   }
 `;
 
-const Loading = styled.h3`
-  color: ${(props) => props.theme.colors.main};
-`;
-
-const PostDetail = ({ post, commentsList, username }) => (
-  <Root>
-    <Menu />
-    <Section>
-      {Object.keys(post).length === 0 ? (
-        <Loading>Aguarde...</Loading>
+const PostDetail = ({ post, commentsList, username }) => {
+  return (
+    <Root>
+      <Menu />
+      {Object.keys(post).length === 0 || commentsList.length === 0 ? (
+        <Loader />
       ) : (
-        <div className="post">
-          <p>Post:</p>
-          <PostUnit
-            title={post.title}
-            description={post.body}
-            display={false}
-            toPerfil={`/user/${post.userId}/perfil`}
-            username={username}
-          />
-        </div>
-      )}
-      <p>Comentários:</p>
-      <Grid lg={2}>
-        {commentsList.length === 0 ? (
-          <Loading>Carregando...</Loading>
-        ) : (
-          commentsList.map((comment) => (
-            <Comments
-              key={comment.id}
-              name={comment.name}
-              email={comment.email}
-              body={comment.body}
+        <Section>
+          <div className="post">
+            <p>Post:</p>
+            <PostUnit
+              title={post.title}
+              description={post.body}
+              display={false}
+              toPerfil={`/user/${post.userId}/perfil`}
+              username={username}
             />
-          ))
-        )}
-      </Grid>
-    </Section>
-    <Footer />
-  </Root>
-);
+          </div>
+          <p>Comments:</p>
+          <Grid lg={2}>
+            {commentsList.map((comment) => (
+              <Comments
+                key={comment.id}
+                name={comment.name}
+                email={comment.email}
+                body={comment.body}
+              />
+            ))}
+          </Grid>
+        </Section>
+      )}
+      <Footer />
+    </Root>
+  );
+};
 PostDetail.defaultProps = {
   post: {},
   commentsList: [],
 };
 
 PostDetail.propTypes = {
-  post: PropTypes.objectOf(PostType),
+  post: PropTypes.shape({
+    userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    title: PropTypes.string,
+    body: PropTypes.string,
+  }),
   commentsList: PropTypes.arrayOf(CommentType),
 };
 

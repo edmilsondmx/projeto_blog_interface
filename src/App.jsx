@@ -5,18 +5,8 @@ import { useState } from "react";
 import GlobalStyle from "./styles/GlobalStyle";
 import ThemeProvider from "./styles/ThemeProvider";
 import Routes from "./routes";
-import styled from "styled-components";
-import { FaSun, FaMoon } from "react-icons/fa";
 
-const IconContainer = styled.p`
-  font-size: 2rem;
-  padding: 2px;
-  position: fixed;
-  right: 5px;
-  top: 40px;
-  cursor: pointer;
-  color: ${(props) => props.theme.colors.main};
-`;
+import Switches from "components/atoms/Switches";
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -29,9 +19,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
-        <IconContainer onClick={toggleTheme}>
-          {theme === "dark" ? <FaSun /> : <FaMoon />}
-        </IconContainer>
+        <Switches toggleTheme={toggleTheme} />
         <Routes />
       </Router>
     </ThemeProvider>
