@@ -35,11 +35,13 @@ const Home = ({
   return (
     <>
       <Menu />
-      <Hero image="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-        <Heading>
-          <h2># Welcome to DevBlog: Exploring Technology and the Internet</h2>
-        </Heading>
-      </Hero>
+      {currentPage === 1 && (
+        <Hero image="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+          <Heading>
+            <h2># Welcome to DevBlog: Exploring Technology and the Internet</h2>
+          </Heading>
+        </Hero>
+      )}
       <Section>
         <TitleDiv>
           {currentPage === 1 ? (
