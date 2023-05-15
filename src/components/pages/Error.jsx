@@ -35,7 +35,9 @@ const Error = ({ title, description, image }) => (
         </Heading>
         <ErrorMessage>{description}</ErrorMessage>
         <div>
-          <Button to="/">Ir para a página inicial</Button>
+          <Button variant="menu" to="/">
+            Ir para a página inicial
+          </Button>
         </div>
       </div>
       <div>
