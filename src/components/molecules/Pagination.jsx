@@ -137,7 +137,9 @@ const Pagination = ({
             }}
             className={`${currentPage === number ? "active" : ""}`}
           >
-            <button>{number}</button>
+            <button className={`${currentPage === number ? "active" : ""}`}>
+              {number}
+            </button>
           </li>
         ))}
         <li

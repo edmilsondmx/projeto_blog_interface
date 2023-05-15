@@ -9,6 +9,10 @@ import PostUnit from "../atoms/PostUnit";
 import Footer from "../organisms/Footer";
 import PostType from "models/types/PostType";
 import Pagination from "components/molecules/Pagination";
+import Hero from "components/molecules/Hero";
+import Heading from "components/atoms/Heading";
+
+import Loader from "components/atoms/Loader";
 
 const TitleDiv = styled.div`
   text-align: center;
@@ -17,10 +21,6 @@ const TitleDiv = styled.div`
     text-transform: uppercase;
     color: ${(props) => props.theme.colors.main};
   }
-`;
-
-const Loading = styled.h3`
-  color: ${(props) => props.theme.colors.main};
 `;
 
 const Home = ({
@@ -35,13 +35,24 @@ const Home = ({
   return (
     <>
       <Menu />
+      {currentPage === 1 && (
+        <Hero image="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+          <Heading>
+            <h2># Welcome to DevBlog: Exploring Technology and the Internet</h2>
+          </Heading>
+        </Hero>
+      )}
       <Section>
         <TitleDiv>
-          <h2>Últimos Posts</h2>
+          {currentPage === 1 ? (
+            <h2>LAST POSTS</h2>
+          ) : (
+            <h2>Page {currentPage} of posts</h2>
+          )}
         </TitleDiv>
         <PostList>
-          {!currentPosts ? (
-            <Loading>Carregando...</Loading>
+          {currentPosts.length === 0 ? (
+            <Loader />
           ) : (
             currentPosts.map((post) => (
               <PostUnit
@@ -72,10 +83,12 @@ const Home = ({
 
 Home.defaultProps = {
   postList: [],
+  currentPosts: [],
 };
 
 Home.propTypes = {
   postList: PropTypes.arrayOf(PostType),
+  currentPosts: PropTypes.arrayOf(PostType),
 };
 
 export default Home;

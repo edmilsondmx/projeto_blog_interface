@@ -8,6 +8,6 @@ it("renders PostDetail page", () => {
   const post = buildPost();
   render(<PostDetail post={post} />);
 
-  const element = screen.getByText(/Post:/i);
+  const element = screen.getByText(/Instagram/i, { selector: "a" });
   expect(element).toBeInTheDocument();
 });

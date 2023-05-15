@@ -21,7 +21,8 @@ const PostDetail = () => {
       const data = response.data;
 
       setPost(data);
-      getUsername(data.userId);
+      const userId = data.userId;
+      getUsername(userId);
     } catch (error) {
       console.error(error);
     }
@@ -54,7 +55,6 @@ const PostDetail = () => {
       console.error(error);
     }
   };
-
   return (
     <PostDetailPage post={post} commentsList={comments} username={username} />
   );

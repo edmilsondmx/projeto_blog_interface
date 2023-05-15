@@ -59,7 +59,8 @@
       "!src/reportWebVitals.js",
       "!src/index.jsx",
       "!src/models/builders/*jsx",
-      "!src/constants/*js"
+      "!src/constants/*js",
+      "!src/models/types/*jsx"
     ]
   },
   "browserslist": {

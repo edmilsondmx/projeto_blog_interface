@@ -25,43 +25,44 @@ const About = () => (
   <>
     <Menu />
     <Section>
+      <h2>Know our history</h2>
+
       <Grid md={2}>
         <Content>
           <p>
-            Bem-vindo ao nosso blog! Aqui você encontrará uma variedade de
-            artigos e recursos sobre diversos assuntos relacionados ao nosso
-            nicho de mercado. Nosso objetivo é fornecer informações relevantes e
-            úteis para nossos leitores, de forma clara e concisa.
+            Welcome to our blog! Here you will find a variety of articles and
+            resources on various subjects related to our market niche. Our aim
+            is to provide relevant information and useful to our readers, in a
+            clear and concise way.
           </p>
           <p>
-            Nós acreditamos que a educação e o compartilhamento de informações
-            são fundamentais para o sucesso em qualquer empreendimento. Por
-            isso, nosso blog é uma extensão da nossa missão de ajudar nossos
-            clientes a atingirem seus objetivos e alcançarem o sucesso em seus
-            negócios.
+            We believe that education and information sharing are critical to
+            success in any endeavor. Per this, our blog is an extension of our
+            mission to help our clients to achieve their goals and achieve
+            success in their business.
           </p>
           <p>
-            Nossos artigos são escritos por profissionais experientes e
-            apaixonados pelo nosso nicho de mercado. Eles fornecem insights
-            valiosos, dicas práticas e análises aprofundadas sobre tendências e
-            melhores práticas. Nós também convidamos especialistas e líderes de
-            opinião para contribuir com seus conhecimentos e experiências.
+            Our articles are written by experienced professionals and passionate
+            about our niche market. They provide insights valuable resources,
+            practical tips and in-depth analysis on trends and best practices.
+            We also invited experts and leaders from opinion to contribute with
+            their knowledge and experiences.
           </p>
           <ul>
-            <li>Educação e aprendizado contínuos.</li>
-            <li>Mantenha-se atualizado sobre as tendências do mercado.</li>
-            <li>Melhore suas habilidades.</li>
-            <li>Comunidade de aprendizado.</li>
-            <li>Gratuito e acessível.</li>
+            <li>Continuing education and learning.</li>
+            <li>Keep up to date on market trends.</li>
+            <li>Improve your skills.</li>
+            <li>Learning Community.</li>
+            <li>Free and affordable.</li>
           </ul>
         </Content>
         <Content>
           <p>
-            Agradecemos por escolher nosso blog como uma fonte confiável de
-            informação e estamos comprometidos em fornecer conteúdo relevante e
-            de qualidade. Não hesite em entrar em contato conosco caso tenha
-            alguma sugestão ou comentário sobre nossos artigos ou nosso blog
-            como um todo. Obrigado por nos acompanhar!
+            Thank you for choosing our blog as a trusted source of information
+            and we are committed to providing relevant content and Of Quality.
+            Do not hesitate to contact us if you have any suggestions or
+            comments about our articles or our blog as a whole. Thanks for
+            following us!
           </p>
           <ImageContainer>
             <AboutSvg />
@@ -73,25 +74,23 @@ const About = () => (
       <Grid md={2}>
         <div>
           <Heading>
-            <h4>Missão</h4>
+            <h4>Mission</h4>
           </Heading>
           <p>
-            Nossa missão é ajudar nossos clientes a alcançar seus objetivos e
-            ter sucesso em seus negócios, fornecendo soluções inovadoras e de
-            alta qualidade, além de informações valiosas e recursos úteis por
-            meio do nosso blog.
+            Our mission is to help our customers achieve their goals and succeed
+            in their business by providing innovative and high quality, plus
+            valuable information and helpful resources by through our blog.
           </p>
         </div>
         <div>
           <Heading>
-            <h4>Visão</h4>
+            <h4>Vision</h4>
           </Heading>
           <p>
-            Nossa visão é nos tornarmos uma referência em nosso nicho de
-            mercado, reconhecidos por nossos clientes como parceiros confiáveis
-            e especialistas em soluções inovadoras e de alta qualidade. Queremos
-            continuar crescendo e evoluindo para fornecer sempre o melhor para
-            nossos clientes e leitores.
+            Our vision is to become a reference in our niche of market,
+            recognized by our customers as reliable partners and specialists in
+            innovative and high quality solutions. we want continue to grow and
+            evolve to always provide the best for our customers and readers.
           </p>
         </div>
       </Grid>

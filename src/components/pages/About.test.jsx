@@ -5,5 +5,5 @@ import About from "./About";
 it("renders About page", () => {
   render(<About />);
 
-  expect(screen.getByText(/Comunidade de aprendizado/i)).toBeInTheDocument();
+  expect(screen.getByText(/Know our history/i)).toBeInTheDocument();
 });
