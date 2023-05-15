@@ -1,11 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`match snapshot 1`] = `
-<DocumentFragment>
-  <div
-    class="sc-beqWaB fZioLu"
+<head>
+  <style
+    data-styled="active"
+    data-styled-version="5.3.9"
   >
-    Title
-  </div>
-</DocumentFragment>
+    .fZioLu h1,.fZioLu h2,.fZioLu h3,.fZioLu h4,.fZioLu h5,.fZioLu h6{color:#fff;position:relative;margin-bottom:25px;padding-bottom:8px;border-bottom:1px solid #1F1F1F;}
+    .fZioLu h1::after,.fZioLu h2::after,.fZioLu h3::after,.fZioLu h4::after,.fZioLu h5::after,.fZioLu h6::after{content:"";position:absolute;left:0;bottom:-3px;background-color:#00A3FF;height:5px;width:70px;}
+    .fZioLu h1{padding-bottom:25px;}
+    .fZioLu h2{padding-bottom:16px;}
+  </style>
+</head>
 `;
