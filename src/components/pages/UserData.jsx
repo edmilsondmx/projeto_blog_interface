@@ -7,7 +7,6 @@ import Section from "components/atoms/Section";
 import Grid from "components/atoms/Grid";
 import Heading from "components/atoms/Heading";
 import Footer from "components/organisms/Footer";
-import UserType from "models/types/UserType";
 
 const ContentProfile = styled.div`
   margin-top: 20px;
@@ -58,12 +57,12 @@ const UserData = ({ image, avatar, user }) => (
         <ImgProfile src={avatar} />
       </ContentProfile>
       {Object.keys(user).length === 0 ? (
-        <h3>Carregando...</h3>
+        <h3>Loading...</h3>
       ) : (
         <Grid md={2}>
           <DataUser>
             <Heading>
-              <h5>Dados Pessoais</h5>
+              <h5>Personal data</h5>
             </Heading>
             <div>
               <span>Name:</span>
@@ -80,7 +79,7 @@ const UserData = ({ image, avatar, user }) => (
           </DataUser>
           <DataUser>
             <Heading>
-              <h5>Endereço</h5>
+              <h5>Address</h5>
             </Heading>
             <div>
               <span>Street:</span>
@@ -95,7 +94,7 @@ const UserData = ({ image, avatar, user }) => (
           </DataUser>
           <DataUser>
             <Heading>
-              <h5>Geo-Localização</h5>
+              <h5>Geo-Location</h5>
             </Heading>
             <div>
               <span>Latitude:</span>
@@ -106,7 +105,7 @@ const UserData = ({ image, avatar, user }) => (
           </DataUser>
           <DataUser>
             <Heading>
-              <h5>Empresa</h5>
+              <h5>Company</h5>
             </Heading>
             <div>
               <span>Name:</span>
@@ -126,13 +125,35 @@ const UserData = ({ image, avatar, user }) => (
 UserData.defaultProps = {
   image: undefined,
   avatar: undefined,
-  user: undefined,
+  user: {},
 };
 
 UserData.propTypes = {
   image: PropTypes.node,
   avatar: PropTypes.node,
-  user: PropTypes.objectOf(UserType),
+  user: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    name: PropTypes.string,
+    username: PropTypes.string,
+    email: PropTypes.string,
+    address: PropTypes.shape({
+      street: PropTypes.string,
+      suite: PropTypes.string,
+      city: PropTypes.string,
+      zipcode: PropTypes.string,
+      geo: PropTypes.shape({
+        lat: PropTypes.string,
+        lng: PropTypes.string,
+      }),
+    }),
+    phone: PropTypes.string,
+    website: PropTypes.string,
+    company: PropTypes.shape({
+      name: PropTypes.string,
+      catchPhrase: PropTypes.string,
+      bs: PropTypes.string,
+    }),
+  }),
 };
 
 export default UserData;
