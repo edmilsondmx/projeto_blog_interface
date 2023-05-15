@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "test-utils";
 import axios from "axios";
 import { useParams as useParamsMock } from "react-router-dom";
-import PostDetail from "./PostDetail";
+import PostDetail from "./postDetail";
 import { BLOG_URL } from "../constants/BLOG_URL";
 
 jest.mock("axios"); // Mock axios
