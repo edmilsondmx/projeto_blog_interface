@@ -3,7 +3,7 @@ import { render } from "../../test-utils";
 import Heading from "./Heading";
 
 it("match snapshot", () => {
-  render(<Heading>Title</Heading>);
+  const { asFragment } = render(<Heading>Title</Heading>);
 
-  expect(document.head).toMatchSnapshot();
+  expect(asFragment()).toMatchSnapshot();
 });
