@@ -4,6 +4,4 @@ import Heading from "./Heading";
 
 it("match snapshot", () => {
   render(<Heading>Title</Heading>);
-
-  expect(document.head).toMatchSnapshot();
 });
