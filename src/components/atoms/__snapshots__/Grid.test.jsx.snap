@@ -1,47 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`match snapshot 1`] = `
-<head>
-  <style
-    data-styled="active"
-    data-styled-version="5.3.9"
-  >
-    .dLcSoP{display:grid;grid-column-gap:16px;grid-row-gap:16px;grid-template-columns:1fr;}
-  </style>
-</head>
-`;
-
-exports[`match snapshot with params 1`] = `
-<head>
-  <style
-    data-styled="active"
-    data-styled-version="5.3.9"
-  >
-    .dLcSoP{display:grid;grid-column-gap:16px;grid-row-gap:16px;grid-template-columns:1fr;}
-    .iCQipX{display:grid;grid-column-gap:16px;grid-row-gap:16px;grid-template-columns:1fr;}
-    @media (min-width:576px){.iCQipX{grid-template-columns:repeat(2,1fr);}}
-    @media (min-width:768px){.iCQipX{grid-template-columns:repeat(3,1fr);}}
-    @media (min-width:992px){.iCQipX{grid-template-columns:repeat(4,1fr);}}
-    @media (min-width:1200px){.iCQipX{grid-template-columns:repeat(5,1fr);}}
-  </style>
-</head>
-`;
-
-exports[`match snapshot with sm an lg 1`] = `
-<head>
-  <style
-    data-styled="active"
-    data-styled-version="5.3.9"
-  >
-    .dLcSoP{display:grid;grid-column-gap:16px;grid-row-gap:16px;grid-template-columns:1fr;}
-    .iCQipX{display:grid;grid-column-gap:16px;grid-row-gap:16px;grid-template-columns:1fr;}
-    @media (min-width:576px){.iCQipX{grid-template-columns:repeat(2,1fr);}}
-    @media (min-width:768px){.iCQipX{grid-template-columns:repeat(3,1fr);}}
-    @media (min-width:992px){.iCQipX{grid-template-columns:repeat(4,1fr);}}
-    @media (min-width:1200px){.iCQipX{grid-template-columns:repeat(5,1fr);}}
-    .sNqNg{display:grid;grid-column-gap:16px;grid-row-gap:16px;grid-template-columns:1fr;}
-    @media (min-width:576px){.sNqNg{grid-template-columns:repeat(6,1fr);}}
-    @media (min-width:992px){.sNqNg{grid-template-columns:repeat(12,1fr);}}
-  </style>
-</head>
+exports[`renders without crashing 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-beqWaB dLcSoP"
+  />
+</DocumentFragment>
 `;
