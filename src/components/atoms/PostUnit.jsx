@@ -77,7 +77,7 @@ const PostUnit = ({ title, description, to, display, toPerfil, username }) => {
             {faker.date.past().toLocaleTimeString()}
           </span>
           <strong>
-            Post by: <span>{username}</span>
+            Posted by: <span>{username}</span>
           </strong>
           <img src={faker.image.avatar()} width={30} height={30} alt="avatar" />
         </i>
