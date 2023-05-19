@@ -36,7 +36,7 @@ const StyledPost = styled.li`
     display: flex;
     font-size: 1rem;
     font-weight: 400;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-end;
 
     ${breakAt(BreakpointSizes.sm)} {
@@ -47,6 +47,9 @@ const StyledPost = styled.li`
 
     span {
       color: ${(props) => props.theme.colors.main};
+    }
+    img {
+      border-radius: 50%;
     }
   }
 `;
@@ -76,6 +79,7 @@ const PostUnit = ({ title, description, to, display, toPerfil, username }) => {
           <strong>
             Post by: <span>{username}</span>
           </strong>
+          <img src={faker.image.avatar()} width={30} height={30} alt="avatar" />
         </i>
       </div>
     </StyledPost>
