@@ -70,13 +70,25 @@ const StyledUserInfo = styled.div`
   &:hover {
     color: ${(props) => props.theme.colors.text};
   }
+  div {
+    margin-top: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    img {
+      border-radius: 50%;
+    }
+  }
 `;
 
 const Comments = ({ name, email, body }) => (
   <StyledComment>
     <StyledUserInfo>
       <span>User</span>
-      <h5>{name}</h5>
+      <div>
+        <img src={faker.image.avatar()} width={30} height={30} alt="avatar" />
+        <h5>{name}</h5>
+      </div>
       <h6>{email}</h6>
     </StyledUserInfo>
     <p>
